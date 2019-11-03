@@ -38,13 +38,30 @@ class UI {
     <td><a href="#" class="btn btn-danger btn-sm
     delete">X</a></td>
     `;
+
+    list.appendChild(row)
   }
 }
 
 // store class: handles storage
 
 // event: display books
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 // event: add book
+document.querySelector('#book-form').addEventListener('submit', (e)
+=> {
+// prevent actual submit
+e.preventDefault();
 
+  // get form values
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const isbn = document.querySelector('#isbn').value;
+
+  // instatiate book
+  const book = new Book(title, autor, isbn);
+
+  console.log(book)
+});
 // event: remove book
